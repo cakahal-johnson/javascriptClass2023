@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js|Output</title>
+    <!-- form external javascript connection -->
+    <script defer src="/js/output.js"></script>
+    <script src="/js/var.js"></script>
+</head>
+<body>
+    <h2>Welcome To Javascript</h2>
+    <p id="js">Js is the world's most popular programming language</p>
+    <p>Uses of Js</p>
+    <li>for web development</li>
+    <li>for small game development</li>
+    <br><hr>
+    <h3>Using Javascript as Inline script </h3>
+    <button type="button" onclick="alert('Js is awesome! and i love Js')">
+        Welcome to my Js first Day!
+    </button> <br> <br>
+
+    <button type="button" onclick="document.getElementById('js').innerText = 'Javascript is awesome to learn'">
+        Welcome to my Js first Day! this displays in the window
+    </button> <br> <br>
+
+    <button type="button" onclick="document.getElementById('tc').innerHTML = Date() ">
+        click to show time
+    </button>
+<p id="tc">Time Check!</p>
+
+<h3>How to Link The Javascript </h3>
+<p>where we have Inline, internal and external connections </p>
+<p>Both the internal and external are done inside the body tag, with the script tag, where we can also use the keyword "defer" as an attribute to alter the change on the loading but mainly for external connection best placed in the HEAD TAG below the title </p>
+
+<h3>Ways to Outputing Javascript</h3>
+<li>writing into the HTML element, by using innerHTML or innerTEXT</li>
+<li>writing into an HTML output, by using document.write() </li>
+<li>writing into an alert-box, by using window.alert() which is same as alert() </li>
+<li>writing into the browser console for debugging, by using console.log() </li>
+
+<button type="button" onclick="document.write('thanks! anyways...')">
+    click to show result
+</button>
+
+<button type="button" onclick="document.write(2005 - 2023)">
+    click to show result
+</button>
+
+<button onclick="window.print()">print this page</button>
+
+<!-- here is for internal javascript connection -->
+<script>
+    // window.alert(18 % 5)
+
+    var name = "my name is Cakahal  Johnson chinonso"
+    let age = 70
+
+    let Name = "chima loves Javascript very well"
+    console.log(age)
+    console.log(Name)
+    console.log(name)
+
+    console.log(2032 - 2005)
+
+    const x = 2023
+    const y = 2003
+    var ans = x * y
+    console.log(ans)
+
+    
+</script>
+
+
+</body>
+</html>

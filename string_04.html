@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript|Strings</title>
+</head>
+<body>
+    <h3>These Javascript Strings are used for stroing and manipulating text</h3>
+    <p>string is zero or more characters written inside quotes as a data type </p>
+
+    <h3>,Javascript Strings Methods</h3>
+    <p>String methods help you to work with strings formatter</p>
+
+    <script>
+        // we use single or double quotes
+        let x = "Chima's class"
+        console.log(x)
+
+         let X = "chima is 70 years old"
+         console.log(X)
+
+         // where we want to check for Lenght of the character inside
+         var abc = "ABCDEFGHIJKLMNOPQRZTUVWXYZ";
+         let alph_len = abc.length;
+         console.log(alph_len) // returns 26 in number
+
+
+        //  Escape Characters
+        //since string must be written within quotes somethings javascript will misunderstand single and double quote so use these Escape characters to have control over string...
+        /*
+        \' it means we want to show single quote within the string
+        \" it means we want to show double quote within the string
+        \\ it means we want to show single \ Backslash within the string
+
+        other escape sequences:
+        \b this means adding Backspace to the string
+        \f this means adding Form feed to the string as function
+        \n this means adding New Line to the Strings
+        \r this means adding Carriage Returns to the string as a function
+        \t this means adding Horizontal Tabulator
+        \v this means adding vertical Tabulator
+
+        \ this is used to break a code line within a text string.
+
+        
+        */
+        var esc = "we are learning 'javascripts' only on weekends";
+        var esc = 'we are learning "javascripts" only on weekends';
+        // var esc = 'we're learning "javascripts" only on weekends'; // error
+        var esc = "we're learning \"javascripts\" only on weekends";
+        console.log(esc)
+
+        // assuming we have an ID named backslash in a p tag
+        //document.getElementById('backslash').innerHTML = "hello \
+       // writing in the new line in our code but will display as single line //in the browser"
+
+        // we can also use + sign as a break as well as concatenation
+        // document.getElementById('backslash').innerHTML = "hello " +
+        // "writing in the new line in our code but will display as single line in the browser"
+
+        // String Can also be an Object
+        var strr = "Chima";
+        console.log(typeof(strr)) // returns a string
+
+        var Strr = new String("Chima"); // this is how output an object
+        console.log(typeof(Strr)) // returns an Object
+
+        // let check if two chima is of the same values using == operator (conditions)
+        console.log(strr == Strr); // returns true be'cos strr and Strr have equal values
+        
+        // let check if two chima is of the same datatype using === operator (conditions)
+        console.log(strr === Strr); // returns false be'cos strr and Strr have different types(string and object)
+
+        //where have to compare:
+        var a = new String("cakahal")
+        var b = new String("cakahal")
+        console.log(a == b) // returns false b'cos a and b are objects
+
+        //but with === 
+        console.log("using === sign: ", a === b ) // also returns false b'cos a and b are objects
+
+        // Note the difference between (a == b ) and (a === b). is that comparing two javascripts Object will always return false 
+
+        // class work get me the length of 'cakahal johnson' return is 15 characters explain why
+
+
+
+        // Javascript String Methods
+        // primitive values, like "chima", cannot have properties or methods(b'cos they are not objects)
+        // length
+
+        //indexof() returns the index(position) of first occurrence of a specified text in a string
+        // NB: 0 is the first position in a string. where 1 if the second and 2 if the third....
+
+        //where we want to get the index of awesome means i want to get the position of awesome in the string
+        var txt = "javascript programme is an awesome language to learn"; 
+        var awe = txt.indexOf("awesome");
+        console.log('position of awesome', awe)
+
+        // lastIndexOf() method returns the index of the last occurrence of a specified text in a string
+        var an = txt.lastIndexOf("an")
+        console.log('lastIndexOf an the string', an)
+
+        // Both indexOf() and lastIndexOf() return -1 if the text is not found.
+
+
+        // Searching for a String in a String
+        // we use search() method searches a string for a specified values and rerturns the position of the match
+        var sear = txt.search("programme")
+        console.log("using a search() ", sear)
+
+        // difference between search and indexOf
+        /*
+            search() cannot take a second start position argument
+            index() cannot take powerful search values(reqular expressions like @#$%^&&>?)
+            but both are equal and returns the same values
+        */
+
+        /*
+            Extracting String we use slice(start, end), substring(start, end), substr(start, length)        */
+
+            /* slice() this extracts a part of a string and returns the extracted part in a new string */
+           
+            let sl = txt.slice(23, 26);
+            console.log(sl)
+
+            //====================== class word extract the programme in the string =====================
+
+            /* we can also use the negative signs */
+            // class work: use negative values to get the "an" in the string
+
+            //where the end is not specified other open characters will extracted as well
+            let sl2 = txt.slice(23,)
+            console.log(sl2)
+
+            // where one negative index is placed with only one value it also display positive sections
+            var sl3 = txt.slice("-41 with slice()" , -41)
+            console.log(sl3)
+
+            /* The Substring() Method*/
+            // the substring is similar to slice() but cannot accept negative indexes
+            //Example same as slice() but not with the negative index
+
+            /* The substr() Method*/
+            // substr() is similar to slice() the difference is that the second parameter specifies the length of the extracted part
+            // here also use the negative index and if the first parameter is negative, the position counts from the end of the string
+            var susb = txt.substr('-41 with substr() ', -41)
+            // other function or example is same as above
+
+            /*==================== REPLACE() =============================*/
+
+            let initial_txt = "This is a java class";
+            console.log('this is initial text:', initial_txt)
+
+            var txt_replace = initial_txt.replace("java", "javascript")
+            console.log('this is replace text:', txt_replace)
+            // this method is case sensitive Java as java
+
+            // where we use regular expression with an /i to flag(insensitive case)
+            var txt_replace_i = initial_txt.replace(/"JAVA"/i, "python");
+            console.log(txt_replace_i)
+
+            // where we use regular expression with an /g to flag(global match) this is without a quotes
+            var txt_replace_g = initial_txt.replace(/java/g, "PHP");
+            console.log(txt_replace_g)
+
+            /* ======================= Convering cases both upper and  lower case in string method ===================== */
+
+            // converting to upperCase
+            var txt_upperCase = initial_txt.toUpperCase();
+            console.log(txt_upperCase)
+
+            // converting to lowerCase
+            var txt_lowCase = initial_txt.toLowerCase();
+            console.log(txt_lowCase)
+
+        /*=======Concatination using the concat() method ========*/
+        let txt_concat = "Peter";
+        let txt_concat2 = "Obi"
+        var txt_concat_result = txt_concat.concat(" ", txt_concat2);
+        console.log(txt_concat_result)
+
+        var txt_plus = "cakahal" + " " + "johnson"; // the qoute has the white space
+        console.log(txt_plus)
+
+        var txt_con = "chima's".concat(" ", "world!")
+        console.log(txt_con)
+
+
+        /*======== using trim() methods to remove whitespce from both sides of a string: */
+
+        var txt_trim = "       count me!    ";
+        var txt_count_me = txt_trim.length;
+        console.log(txt_count_me)
+
+        console.log(txt_trim)
+
+        //now we can use trim to remove the white space
+        let new_txt_trim = txt_trim.trim();
+        console.log(new_txt_trim)
+
+        // checking for new len of the count me! using length
+        let new_txt_len = new_txt_trim.length;
+        console.log(new_txt_len)
+
+        /*=========== where we can Extract the strings using charAt(position) charCodeAt(position) Property access [] where the position is the index */
+
+        // this character returns a single character set of the string
+        let txt_char = "characters";
+        let txt_char_result = txt_char.charAt(6)
+        console.log(txt_char_result)
+        console.log(txt_char_result.toUpperCase())
+
+        // this character returns a UTF-16 code (an integer from 0 to 65535) character set of the string
+
+        let txt_char_code = txt_char.charCodeAt(6)
+        console.log(txt_char_code) //116 it returns a code number
+
+        // (2009) property_access
+        var txt_property_access = "Hello";
+        var txt_p_access_result = txt_property_access[0]
+        console.log(txt_p_access_result)
+
+        // property_access vs charAt
+        /*
+           property_access this looks like array but they are not
+
+           property_access retruns error undefined when the [] is empyt while charAt() returns an empty string
+
+          property_access read only with position index while charAt can take both index and characters as well "A"
+        
+        */
+
+
+        /*=========== converting a string to an Array ==========*/
+        // we use split() method for the convertion
+        var txt_split_courses = "java, python, php, javascript";
+        let txt_split_hash = txt_split_courses.split("#")
+        let txt_split_star = txt_split_courses.split("*")
+        let txt_split_dallar = txt_split_courses.split("$")
+
+        console.log(txt_split_hash)
+
+        function mySplit() {
+            var txt_split_courses_func = "j,a,v,a,s,c,r,i,p,t";
+            let txt_split_func = txt_split_courses_func.split(",");
+            document.getElementById('mySlpit1').innerHTML = txt_split_func[0]
+
+            // it returns the position of the first index
+
+            console.log(txt_split_func[0])
+        }
+
+        
+
+    </script>
+
+<!-- /*=========== converting a string to an Array ==========*/
+// we use split() method for the convertion -->
+       <button onclick="mySplit()"> click change seperators </button>
+       <li id="mySlpit1"></li>
+       <li id="mySlpit2"></li>
+       <li id="mySlpit3"></li>
+    
+</body>
+</html>

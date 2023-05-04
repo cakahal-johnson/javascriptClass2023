@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number||Method</title>
+</head>
+<body>
+    <h2>Number||Method</h2>
+    <p>this number method are ways we can format or use our numbers as a function</p>
+    <h3>toString()</h3>
+    <p>this helps to set any numbers to a string values(i.e plain-text)</p>
+    <pre id="ts"></pre>
+    
+    <h3>toExponential()</h3>
+    <p>this helps to set any numbers to a Exponential values</p>
+    <pre id="te"></pre>
+
+    <h3>toPrecision()</h3>
+    <p>this returns a string, with a number written with a specifed lenght:</p>
+    <pre id="tp"></pre>
+
+
+
+    <script>
+        // example of toString method
+        var a = 123
+        var A = "chima"
+        consolelog(a) // as a number
+        document.getElementById('ts').innerHTML = "a variable as String: " 
+        + a.toString() 
+        + "<br>" 
+        + (100 + 230).toString()
+        + "<br>"
+        + typeof(a)
+
+        console.log(a.toString()) // as a text
+        console.log(A)
+
+        // example of toExponential()
+        // this is an optional parameter that defines the number of digits behind the decimal point
+        let b = 9.656;
+        document.getElementById('te').innerHTML =
+        "The value of b is: " + b + "<br>"+
+        "The Exponentail value of b is: " + b.toExponential() + "<br>"+
+        "converting with 2: " + b.toExponential(2) + "<br>"+
+        "converting with 4: " + b.toExponential(4) + "<br>"+
+        "converting with 6: " + b.toExponential(6) + "<br>"
+
+        /*
+            <h3>toPrecision()</h3>
+            <p>this returns a string, with a number written with a specifed lenght:</p>
+            Examples of toPrecision()
+        */
+       let c = 9.656;
+       document.getElementById('tp').innerHTML = 
+       c + "<br>" +
+       ""
+
+
+    </script>
+</body>
+</html>

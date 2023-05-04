@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch||Gang</title>
+</head>
+<style>
+    body
+    {
+        background-color: #000;
+    }
+
+    h3
+    {
+        color: #fff;
+    }
+    #bulb
+    {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 50px;
+        background-color: #ccc;
+    }
+
+    small
+    {
+        color: red;
+        border: 1px solid green;
+        padding: 10px;
+        background-color: yellow;
+        display: none;
+    }
+</style>
+
+<body>
+    <section>
+        <h3>Switching Function <span id="time" ></span></h3>
+        <small id="alertMe">
+            Hey!...switch off the lights when not in use...
+        </small>
+    </section>
+    <hr>
+    <section>
+        <p id="bulb"></p>
+    </section>
+
+    <section>
+        <button id="on">1Way(ON) switch</button> <br> <br> <button id="off">1Way(OFF) switch</button>
+    </section>
+    <br><br>
+    <section>
+        <button id="toggle">2way switch</button>
+    </section>
+
+    <script>
+        alert("HI.. welcome home switch off the lights when not in use...")
+
+        //class add time current time stamp in the id time
+
+        var turnOn = document.getElementById('on');
+        var turnOff = document.getElementById('off');
+        let bulb = document.getElementById('bulb');
+        let gang = document.getElementById('toggle');
+
+        const flash = document.getElementById('alertMe');
+
+        var is_it_On = false; // here is a boolean for our condition statements where we check if the light is ON or Off
+
+        //here we call out the function that will turn On the bulb
+        turnOn.onclick = function(){
+            bulb.style.background = "gold";
+            flash.style.display = "block";
+            is_it_On = true;
+        }
+
+        //here let's turn if off in using 1way gang
+        turnOff.onclick = function(){
+            bulb.style.background = "gray"; 
+            flash.style.display = "none";
+            is_it_On = false;
+        }
+
+        //2way gang switch where we can on n off the light from one switch
+        gang.onclick = function(){
+            //if statements since we are checking conditions
+            if(is_it_On == true){
+                bulb.style.background = "#ccc";
+                gang.innerHTML = "Off";
+                gang.style.background = "gold";
+                flash.style.display = "none";
+                is_it_On = false
+            }else{
+                bulb.style.background = "yellow"
+                gang.innerText = "ON";
+                gang.style.background = "lightgray";
+                flash.style.display = "block";
+
+                is_it_On = true;
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>

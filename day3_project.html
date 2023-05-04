@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>working with colors</title>
+</head>
+<style>
+    .header
+    {
+        background-color: #000;
+        padding: 15px;
+        color: #fff;
+        text-align: center;
+        box-shadow: 2px 2px 5px red;
+        margin: 15px;
+        font-size: 3em;
+        text-shadow: 1px 1px 5px greenyellow; 
+        font-weight: bolder;
+    }
+
+
+
+    .container
+    {
+        margin: 0 10%;
+        display: block;
+
+    }
+
+    button, input
+    {
+        padding: 5px;
+    }
+
+</style>
+
+<body>
+
+    <h3>working with colors</h3>
+    <section>
+        <div class="header" id="header">
+            <pre id="headerText">Screen</pre>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <textarea name="" id="description" cols="30" rows="10"></textarea>
+            <input type="text" placeholder="Background color" name="" id="textBackground">
+            <input type="color" placeholder="text color" name="" id="textFontColor">
+            <br><br>
+            <button id="btnChange">Apply changes</button> 
+        </div>
+    </section>
+
+    <script>
+        var header = document.getElementById('header')
+        var headerText = document.getElementById('headerText')
+        let desc = document.getElementById('description')
+        let background = document.getElementById('textBackground')
+        let font = document.getElementById('textFontColor')
+        const btnChange = document.getElementById('btnChange')
+
+        //we use name function
+        btnChange.onclick=function(){
+            // i will use conditional statement
+            if(desc.value.length <= 50){
+                headerText.textContent = desc.value;
+                header.style.background = background.value
+                header.style.color = font.value;
+            }else{
+                headerText.innerHTML = '<small> Description is too long. please reduce...</small>';
+            }
+        }
+
+    </script>
+</body>
+</html>

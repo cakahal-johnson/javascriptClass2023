@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+</head>
+<body>
+    <h2>Browser Object Model(BOM) while Document Object Model(DOM) </h2>
+    <p>when a web page is loaded, the browser creates a Document Object Model of the page</p>
+    <ul>
+        <li>Document</li>
+        <li>Root element: ( < HTML >  )</li>
+        <li>Root element has: < head > and <  body > </li>
+        <li>Head element has: < title  > and < Text >, < meta >  </li>
+        <li>Body element has: attribute < a > and < h1 > </li>
+    </ul>
+
+    <h3>with this Object Model javascript creates a dynamic HTML</h3>
+    <ol>
+    <li>it can change all the HTML elements in the page</li>
+    <li>it can change all the HTML attribute in the page</li>
+    <li>it can change all the CSS style  in the page</li>
+    <li>it can remove existing HTML elements and attribute in the page</li>
+    <li>it can add new HTML elements and attribute in the page</li>
+    <li>it can react to all existing HTML events in the page</li>
+    <li>it can create new HTML events in the page</li>
+    </ol>
+
+    <h3>DOM Interface</h3>
+    <ul>
+        <li>The HTML element as objects</li>
+        <li>The properties of all HTML elements</li>
+        <li>The methods to access all HTML elements</li>
+        <li>The events of all HTML elements </li>
+    </ul>
+
+
+    <h3>BOM categories </h3>
+    <ol>
+        <li>js window: window.open() to open a new window, window.close(), window.moveTo(), window.resizeTo()</li>
+        <li>js screen: screen.width, screen.height, availWidth, availHeight, colorDepth (24bits = True color, 32bits (Deep color)) , pixelDepth</li>
+        <p id="sw"></p>
+
+        <li>Location(URL): has href(current URL page), hostname (domain name of web host), pathname(current page file path and filename), protocol(returns the web protocol used(http: or https)), assign() loads a new document</li>
+        <p id="wl"></p>
+
+        <li>History: contains the browsers History it has history.back() means same as clicking back in the browser and same as forward()</li>
+        <button type="button" value="Back" onclick="goBack()">Back</button>
+
+        <li>Navigator: this object contains information about the visitor's browser, properties: navigator.appName, navigator.appCodeName, navigator.platform</li>
+        <p id="ng"></p>
+        <p id="an"></p>
+        <p id="anc"></p>
+
+        <li>Js Popup Alert</li>
+        <button type="button" onclick="myAlert()" >Alert me</button>
+        <button type="button" onclick="myCon()" >Confirm me</button>
+        <button type="button" onclick="myProm()" >Prompt me</button>
+        <p id="at"></p>
+        <p id="at1"></p>
+
+    </ol>
+
+    <script>
+        // window screen example
+        document.getElementById('sw').innerHTML = "Screen width is " + screen.availWidth;
+
+        // window location example
+        document.getElementById('wl').innerHTML = "The Full Url of this page is: <br> " + window.location.href;
+
+        // History example:
+        function goBack(){
+            // window.history.back()
+            window.history.forward()
+        }
+
+        //Navigator
+        //checking if cookies is enabled which returns booleans
+        document.getElementById('ng').innerHTML = 
+        "navigator.cookieEnabled is " +
+        navigator.cookieEnabled;
+
+        //appName
+        //this returns the application name of the browser
+        document.getElementById('an').innerHTML = 
+        "navigator.appName is " +
+        navigator.appName;
+
+        //appCodeName, product, appVersion, userAgent
+        //this returns the code name of the browser
+        document.getElementById('anc').innerHTML = 
+        "navigator.product is " +
+        navigator.product;
+        /*
+        Different browsers can use the same name
+        The navigator data can be changed by the browser owner
+        Some browsers misidentify themselves to bypass site tests
+        Browsers cannot report new operating systems, released later than the browser
+        
+        navigator.platform returns the browsere platform(operating system)
+        navigator.language returns the browser's language
+        navigator.onLine returns true if the browser is onLine
+        navigator.javaEnabled() returns true if Java is enabled
+        */
+
+            //Popup Alerts, confirm, prompt
+        // window.alert("we are learning javascripts")
+        // alert("we are learning javascripts")
+
+        function myAlert(){
+            alert("congratulation you won $4000004 ")
+        }
+
+        //confirm
+        function myCon(){
+            var txt;
+            if(confirm("Press a Button!")){
+                txt = "You pressed Ok!";
+            }else{
+                txt = "You pressed Cancel!"
+            }
+
+            document.getElementById('at').innerHTML = txt;
+        }
+        
+        //prompt use as input to dom
+        function myProm(){
+            let Txt;
+            var person = prompt("Please enter your Username", "Cakahal Johnson");
+            if(person == null || person == ""){
+                Txt = "User cancelled the prompt.";
+            }else{
+                Txt = "Hello Welcome " + person + "! How are you today";
+            }
+            document.getElementById('at1').innerHTML = Txt;
+
+        }
+
+        // line-breaks in a popup box we use \n
+        
+        
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

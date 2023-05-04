@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iteration</title>
+</head>
+<body>
+    <h3>Iteration Methods</h3>
+    <p>is another way of Array iteration methods operate on every array item</p>
+
+    <pre id="ite"></pre>
+    <p id="itera"></p>
+
+    <p>forEach() where a method calls a  function (i.e a callback function) once forEach array element is executed </p>
+
+    <script>
+        let txt = "";
+        var numbers = [45, 4, 9, 16, 25];
+
+        document.querySelector('#ite').innerHTML = "Here is list of array "+ numbers + '<br>';
+
+        numbers.forEach(myFunc);
+        document.getElementById('itera').innerHTML = txt;
+
+        //for the  callback function we use definitions
+        function myFunc(value, index, array){
+            txt = txt + value + '<br>';
+        }
+
+    </script>
+
+    <!-- here is the Map() -->
+    <h3>Array.map()</h3>
+    <ul>
+        <li>this creates a new array by performing a function on each array element</li>
+
+        <li>it does not execute the function for array elements without values</li>
+
+        <li>it does not change the original array</li>
+    </ul>
+
+    <p id="mp"></p>
+    <p id="map"></p>
+    <pre><i><strong>when a callback function uses only the value parameter, the index and array parameters can be omitted</strong></i></pre>
+
+    <script>
+        // here is for the Array.map()
+        var number = [45, 4, 9, 16, 25];
+        let new_number = number.map(myMap);
+
+        document.querySelector('#mp').innerTEXT = number;
+
+        document.getElementById('map').innerHTML = new_number;
+
+        function myMap(value, index, array){
+            return value * 2;
+        }
+
+
+    </script>
+
+    <!-- here is for Array.filter() -->
+    <h3>Array.filter()</h3>
+    <p>The filter() method creates a new array element that pass a test</p>
+    <p id="ft">This example creates a new array from elements with a value larger than 18:</p>
+    <strong>This function does not use the index and array parameters, so they can be omitted: </strong>
+    
+    <script>
+        // here is for the Array.filter()
+        const Number = [45, 4, 9, 16, 25, 18];
+        let over18 = Number.filter(myAF);
+
+        document.getElementById('ft').innerHTML = over18;
+
+        function myAF(value, index, array){
+            // return value > 18;
+            // return value < 18;
+            return value <= 18;
+
+        }
+    </script>
+
+    <!-- here is for Array.reduce -->
+    <h3>Array.reduce()</h3>
+    <p>this function on each array element to produce(reduce it to ) a single value</p>
+
+    <strong>does not reduce the original array, this method works from left-to-right in the array </strong>
+    <p id="rd"></p>
+
+    <script>
+        // here for the Aarray.reduce()
+
+        let NUMBER = [45, 4, 9, 16, 25, 1];
+        var sum = NUMBER.reduce(myRD);
+
+        document.getElementById('rd').innerHTML = "The total sum is: " +sum;
+
+        function myRD(total, value, index, array){
+            return total + value;
+        }
+
+        // we also have an Array.reduceRight() This runs a function on each array element to produce(reduce it to) a single value it works from right-to-left in the array, and does not reduce the original array
+        //same as above
+    </script>
+
+    <!-- here is for Array.Every() -->
+    <h3>Array.Every()</h3>
+    <p>This function checks if all array values pass a test but return boolean </p>
+    <p id="ev"></p>
+
+    <script>
+        // here is for Array.Every()
+
+        let inec = [45, 4, 9, 16, 25];
+        let voters_ov18 = inec.every(myEv);
+ 
+        document.getElementById('ev').innerHTML = "voters who is not upto 18 years that voted " + voters_ov18;
+
+        function myEv(value, index, array){
+            return value > 18;
+        }
+    </script>
+
+    <!-- here is for the Array.indexof() -->
+    <h3>Array.indexof()</h3>
+    <p>this is used to search an array in an element value and returns its position remember first item is always 0(zero) </p>
+    <pre id="idx"></pre>
+
+    <script>
+        //here for Array.indexof() lastIndexof()
+        let team = ['cakahal', 'johnson', 'frank', 'joy' , 'Joy'];
+        var girl = team.indexOf('joy');
+
+        document.getElementById('idx').innerHTML ="where we are looking for the position of the girl: "+ girl;
+    </script>
+
+    <!-- here is for the lastIndexof() -->
+    <h3>Array lastIndexof()</h3>
+    <p>This returns the position of the last occurance of the specified element also takes parameters item (Required) and starts (is optional) this is also called the negative index</p>
+    <p id="lidx"></p>
+
+    <script>
+        //lastIndexof()
+        let Team = ['cakahal', 'johnson', 'frank', 'joy' , 'Joy'];
+        var Girl = Team.lastIndexOf('joy');
+
+        document.getElementById('lidx').innerHTML = "to find the position "+ (Girl);
+
+
+
+    </script>
+
+    <!-- check of Array.find() SAME WITH WHEN A TEST IS PASSED
+    
+        ARRAY.findIndex() also gets the position
+    
+    -->
+
+
+
+
+</body>
+</html>

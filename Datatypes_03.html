@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript|Datatypes</title>
+</head>
+<body>
+    <h2>Javascript|Datatypes</h2>
+    <p>This is a ways or concepts in which grogramming lang. can solve or access data</p>
+    <h3>TYPES of Javascript DataTYPES:</h3>
+        <li>Numbers type: (operators and numbers without a qoute)</li>
+        <li>String type: (characters or words inside a qoute)</li>
+        <li>Object type: (arrays and group of datas)</li>
+        <p id="num"></p>
+
+        <h2>MATH OBJECT </h2>
+        <p>This helps or allows you to perform a mathematical tasks on number</p>
+
+        <p><strong>Example:</strong> where we have Math.pi if will return ratio of a circle's circumference to it's diameter</p>
+        <p id="mo"></p>
+        <p id="mo1"></p>
+        <p id="mo2"></p>
+        <p id="mo3"></p>
+        <p id="mo4"></p>
+        <p id="mo5"></p>
+        <p id="mo6"></p>
+        <p id="mo7"></p>
+        <p id="mo8"></p>
+        <p id="mo9"></p>
+        <p id="mo10"></p>
+
+        <script>
+            //Math Operators
+            document.getElementById('mo').innerHTML = "Pi constants values: " + Math.PI
+            document.getElementById('mo1').innerHTML = "Euler's constants values: " + Math.E
+            
+            document.getElementById('mo3').innerHTML = "Square root constants values: " + Math.SQRT2
+            
+            document.getElementById('mo4').innerHTML = "Square2 root constants values: " + Math.SQRT1_2
+            
+            document.getElementById('mo5').innerHTML = "Log of 2 constants values: " + Math.LN2
+            
+            document.getElementById('mo6').innerHTML = "Log of 10 constants values: " + Math.LN10
+
+            //Math methods for round()
+            console.log("Maths Methods")
+            console.log(Math.round(5.8))
+            console.log(Math.round(5.5))
+            console.log(Math.round(5.4))
+            console.log(Math.round(-5.4))
+            console.log(Math.round(5.1))
+
+            //Math ceil() method
+            console.log("Math ceil")
+            console.log(Math.ceil(5.8))
+            console.log(Math.ceil(5.3))
+            console.log(Math.ceil(-5.3))
+            console.log(Math.ceil(5.1))
+
+            
+             //Math floor() method
+             console.log("Math floor")
+             console.log(Math.floor(5.8))
+             console.log(Math.floor(5.1))
+             console.log(Math.floor(-5.1))
+
+              //Math Power() method
+            console.log("Math Power")
+            console.log(Math.pow(8,2))
+            console.log(Math.pow(8,-2))
+
+             //Math Square() method
+             console.log("Math Square root")
+             console.log(Math.sqrt(64))
+
+              //Math abs() method
+            console.log("Math Absolute")
+            console.log(Math.abs(-4.7))
+
+             //Math sin() method
+             console.log("Math sin")
+             console.log(Math.sin(90))
+
+             document.getElementById('mo7').innerHTML = "The sine 90 deg is: " + Math.sin(90 * Math.PI/180)
+
+            //  checking for the Lowest number in the array using Math.min
+             document.getElementById('mo8').innerHTML = " The lowest in our list is: " + Math.min(150, 0, -10, 10, -200, 50, -300)
+
+             // using the random() method
+            document.getElementById('mo9').innerHTML = "This displays a Random Number each time we refresh " + Math.random()
+           
+            // using the random() method
+            document.getElementById('mo10').innerHTML ="This displays a Random Number in a renge  of 10 each time we refresh " + Math.floor(Math.random() * 11) 
+            
+
+        </script>
+
+        <script>
+            // d/f b/w a number and a string
+            let a = 15 + 15; // is number + number
+            let b = "15" + 15; // is string-number and number
+            let c = "result: " + 5; // string and number
+            console.log(c)
+            console.log(b)
+            console.log(a)
+            document.getElementById('num').innerHTML = a + '<br>' + b + '<br>' + c;
+
+        </script>
+
+        <script src="/js/number.js"></script>
+</body>
+</html>

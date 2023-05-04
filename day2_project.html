@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day_02||Project</title>
+</head>
+
+<style>
+    .container
+    {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 10PX;
+    }
+
+    .box
+    {
+        width: 9.5%;
+        border: 1px solid green;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    input
+    {
+        padding: 10px;
+        width: 20%;
+        margin: 10px;
+        outline:1px solid tomato;
+        box-shadow: 2px 2px 5px #ccc;
+
+    }
+
+</style>
+
+<body>
+    <h3>Looping Numbers|| Actions on Change || output function</h3>
+
+    <h3>Looping Numbers</h3>
+    <p>where we can add anything (box) just adding or subing a number</p>
+
+    <input type="number" name="" id="number_of_box">
+
+    <div class="container"></div>
+
+
+    <script>
+
+        let container = document.querySelector('.container');
+        var holder = '';
+        var number_of_box = document.getElementById('number_of_box');
+
+        function createBoxes(addd){
+            if(addd <= 300){
+                for(i = 1; i <= addd; i++){
+                    holder += '<div class="box">' + i + '</div>'
+                }
+
+                container.innerHTML = holder;
+            }else{
+                // alert('Number is too high')
+                prompt('Number is too high')
+            }
+
+        }
+        // using naming function we call out the numbers of the box
+        number_of_box.addEventListener('input', function(){
+            container.innerHTML = '';
+            holder = '';
+            createBoxes(number_of_box.value)
+        })
+
+    </script>
+</body>
+</html>

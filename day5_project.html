@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M|A Display</title>
+    <link rel="stylesheet" href="">
+    <style>
+        .next, .prev
+        {
+            font-size: 50px;
+            cursor: crosshair;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            transition: 0.6 ease-in-out;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .dot
+        {
+            cursor: pointer;
+            display: inline-block;
+            transition: 0.6s ease-in-out;
+        }
+
+        /*  css for js */
+        .active, .dot:hover
+        {
+            opacity: 0.5;
+        }
+
+        .text
+        {
+            font-size: 15px;
+            padding: 5px;
+            border-left: 1.5px solid red;
+            margin: 5px;
+            position: absolute;
+            bottom: 8px;
+            color: blueviolet;
+            text-align: center;
+        }
+
+        .pixNum::before
+        {
+            content: "";
+            height: 15px;
+            width: 15px;
+            border-left: 2px dotted blueviolet;
+            margin: 5px;
+        }
+        .pixNum::after
+        {
+            content: "";
+            height: 15px;
+            width: 15px;
+            border-left: 2px dotted blueviolet;
+            margin: 5px;
+        }
+
+        .pixNum
+        {
+            color: rgb(104, 4, 4);
+            padding: 8px;
+            position: absolute;
+        }
+
+        .next
+        {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+
+        }
+
+        .prev:hover, .next:hover
+        {
+            color: #000;
+        }
+
+        a
+        {
+            text-decoration: none;
+            color: red;
+        }
+
+        .mySlides
+        {
+            display: none;
+        }
+
+        .fade
+        {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from
+            {
+                opacity: 0.4;
+
+            }
+            to
+            {
+                opacity: 1;
+            }
+        }
+
+        img
+        {
+            width: 100%;
+            vertical-align: middle;
+        }
+
+        body
+        {
+            max-width: 50%;
+            max-height: 600px;
+            position: relative;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h3>M|A Display</h3>
+    <section>
+        <div class="mySlides fade">
+            <div style="color: #fff" class="pixNum">1/3</div>
+            <img src="../beer.jpg" title="beer" alt="beer">
+            <div class="text">I Love To Beer</div>
+        </div>
+        <div class="mySlides fade">
+            <div style="color: #fff" class="pixNum">2/3</div>
+            <img src="../image/p5.jpg" title="hills" alt="hills">
+            <div class="text">I Love ice hills</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="pixNum">3/3</div>
+            <img src="../image/p1.jpg" title="water" alt="water">
+            <div class="text">water is life</div>
+        </div>
+    </section>
+
+    <section>
+        <a href="#" class="prev" onclick="plusSlides(-1)"> &#10094; </a>
+        <a href="#" class="next" onclick="plusSlides(1)"> &#10095; </a>
+    </section>
+
+    <section>
+        <div class="icon">
+            <span class="dot"><i class="fas fa-home" onclick="currentSlide(2)">beer</i></span>
+            <span class="dot"><i class="fas fa-car" onclick="currentSlide(3)">car</i></span>
+            <span class="dot"><i class="fas fa-blog" onclick="currentSlide(4)">blog</i></span>
+
+        </div>
+    </section>
+
+
+    <script>
+        let slideIndex = 1;
+        showSlide(slideIndex);
+
+        function plusSlides(n){
+            showSlide(slideIndex += n);
+        }
+
+        function currentSlide(n){
+            showSlide(slideIndex = n);
+        }
+
+        function showSlide(n){
+            var i;
+            let slides = document.getElementsByClassName("mySlides");
+            console.log(slides);
+            var dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length){slideIndex = 1 }
+
+            if(n < 1){slideIndex = slides.length}
+
+            for(i = 0; i < slides.length; i++){
+                slides[i].style.display = "none";
+                // others can still come in
+            }
+
+            for(i = 0; i < dots.length; i++){
+                dots[i].className = dots[i].className.replace(" active ", "" );
+            }
+
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+
+
+</body>
+</html>

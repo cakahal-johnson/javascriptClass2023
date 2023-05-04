@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript||Variables</title>
+</head>
+<body>
+    <h2>Javascript||Variables</h2>
+    <p>Variables are like a memory container for storing data value either words or numbers </p>
+
+    <p>Relus of making or assigning a Variables:</p>
+    <ol>
+        <li>Names can contain letters, digits, underscores, and dollar signs</li>
+        <li>Names must begin with a letter</li>
+        <li>Names can also begin with a $ and _ but not with a number</li>
+        <li>Name are very case sensitive (Name and name or nAme all is a different variable name)</li>
+        <li>Reserved words (like Javascript keyword) cannot be used as a name variables which is primitive datatype</li>
+
+        <p>All variables must be identified with a unique name called identifiers </p>
+
+        <p>Javascript uses = sign to assign a varibales as an identifiers, this == (operators sign) is not same with = (assigning varibales) </p>
+
+    </ol>
+
+    <h2>Javascript DataTypes</h2>
+    <p>for outputting a word variale we use strings: this string use either "" or '' to hold the vaues eg: "Chima" </p>
+    <p>for outputting numbers variables we use numbers without the quotes eg: 123456790</p>
+
+    <p id="demo"></p>
+    <p id="demo1"></p>
+
+    <script>
+        var name = "Chima loves Javascript"
+        console.log(name)
+
+        var Name = "Johnson loves game"
+        console.log(Name)
+
+        var $12 = "cakahal";
+        document.getElementById('demo').innerHTML = name; // this is a Variable Value
+        document.getElementById('demo1').innerHTML = "name"; // this is a String Value
+        console.log("$12") // this is a String Value
+        console.log($12) // this is a Variable Value
+
+        var students = "we are learning Javascript";
+        console.log(students);
+
+        var inec = 10;
+        console.log(inec)
+
+        var inec1 = "10";
+        console.log(inec1)
+
+        /* JAVASCRIPT CONCATENATION: means adding or joining or combining two or more variables or statements by using just the + sign */
+
+        var tinbu = 12;
+        var atiku = 14;
+        var obi = 4000000;
+        var Inec = tinbu + atiku;
+        var result = Inec + obi;
+        console.log(result)
+
+        console.log(obi)
+        console.log(atiku)
+        console.log(tinbu)
+
+        var x = 10;
+        // let y = "10";
+        let y = " is the total vote for Tinbu"
+        const ans = x + y;
+        console.log(ans)
+
+        console.log('The real result for Obi is: ' +result)
+
+        /* The difference between double and single qoute "" and '' */
+        var chima = "javascript is awesome i'm happy to learn coding";
+        console.log(chima)
+
+        // var Chima = 'javascript is awesome i'm happy to learn coding';
+        var Chima = 'javascript is awesome im happy to learn coding';
+        console.log(Chima)
+
+        var add = 44 + 55;
+        console.log('the answers is: ' + add) // words as concatenation
+        console.log('the answers is: ', add) // works as a combinator b/w dataTypes
+
+        console.log('the answers is: ', 55 + 44)
+
+        // Multipy Line Variables
+        var Students = "Chima", students_course = "Javascript", students_Days = "weekend class", students_number = "once a week";
+
+        console.log(students_number)
+       
+    </script>
+</body>
+</html>

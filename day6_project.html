@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeInteral</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+</head>
+<style>
+    *
+    {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    nav
+    {
+        background-color: #000;
+        
+    }
+
+    nav a 
+    {
+        color: #fff;
+        text-decoration: none;
+        padding: 20px;
+        display: inline-block;
+    }
+
+    nav a:hover
+    {
+        background-color: #fff;
+        color: #000;
+        border-bottom: 2px solid red;
+    }
+
+    .container
+    {
+        height: 90vh;
+        background-image: url(/image/beer.jpg);
+        background-position: center center;
+        background-size: cover;
+
+    }
+
+    .content
+    {
+        color: #fff;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding-bottom: 50px
+    }
+
+    #title
+    {
+        font-family: sans-serif;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+
+    #para
+    {
+        color: aquamarine;
+        background-color: rgba(255, 255, 225, 0.4);
+        outline: none;
+        border-radius: 15px;
+        text-shadow: 2px 2px 5px #000;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <section class="header">
+        <nav class="nav">
+            <a href="#"> <i class="fas fa-home fa-x1"></i> Home</a>
+            <a href="#"> <i class="fas fa-blog fa-x1"></i>Blog</a>
+            <a href="#"> <i class="fas fa-address-book fa-x1"></i>Contact</a>
+        </nav>
+    </section>
+
+    <header class="container" id="container">
+        <div class="content">
+            <h2 id="title">beer</h2>
+            <p><strong id="para">I to beer on weekend hit me up guy's</strong></p>
+        </div>
+    </header>
+
+    <script src="/js/TI.js"></script>
+</body>
+</html>

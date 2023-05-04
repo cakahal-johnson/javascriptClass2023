@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+</head>
+<script>
+    // setting up a cookies
+
+    function setCookies(cname, cvalue, exdays){
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires=" + d.toGMTString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        // you should define the cookie path to ensure that you deleted the right cookie
+        //some browsers will not let you delete a cookies if you don't specify the path
+    }
+
+    // getting the cookies
+    function getCookies(cname){
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookies);
+        var ca = decodedCookie.split(';');
+        // looping through get the cookies
+        for(var i = 0; i < ca.length; i++){
+            var c = ca[i];
+            while (c.charAt(0) == ' '){
+                c = c.substring(name.length, c.length);
+
+            }
+            if (c.indexOf(name) == 0){
+                return c.substring(name.length, c.length);
+
+            }
+        }
+        return "";
+    }
+
+    // checking for cookies
+    function checkCookies(){
+        var user = getCookies("username");
+        if(user != ""){
+            alert("Welcome back how do you do today: " + user);
+
+        }else{
+            user = prompt("Please enter your name:", "");
+            if (user != "" && user != null) {
+                setCookies("username", user, 30)
+                //where 30 means 30 days to expire
+            }
+        }
+    }
+</script>
+<body onload="checkCookies()">
+    <h2>HTML||Cookies</h2>
+    <p>cookies are data, stored in small text files, on your computer</p>
+    <li>it solve the problem "how to remember information about user</li>
+
+    <p>when a user visits a web page. his/her name can be stored in a cookies.</p>
+    <p>so that next time the suer visits the page the cookies "remembers" his/her name</p>
+
+    <pre>cookies javascript functions</pre>
+    <li>A function to set a cookies values</li>
+    <li>A function to get a cookies values</li>
+    <li>A function to check a cookies values</li>
+
+    <li><strong>cookies can also set to have an expire</strong></li>
+
+
+
+
+</body>
+</html>

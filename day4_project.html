@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>locate||Change</title>
+</head>
+<style>
+    .container
+    {
+        display: block;
+        width: 40%;
+    }
+    input, textarea
+    {
+        margin: 15px;
+        padding: 10px;
+    }
+</style>
+<body>
+    <h3>locate||Change</h3>
+    <section>
+        <div class="container">
+            <textarea name="" id="firstbox" placeholder="Main Body" cols="30" rows="10"></textarea>
+            <input type="text" name="" id="secondbox" placeholder="Find">
+            <input type="text" name="" id="thirdbox" placeholder="Replace">
+            <input type="button" value="Update" name="" id="button">
+        </div>
+    </section>
+
+    <script>
+        let firstbox = document.getElementById('firstbox');
+        var secondbox = document.getElementById('secondbox');
+        var thirdbox = document.getElementById('thirdbox');
+        const btn = document.getElementById('button');
+
+        //we use naming function
+        btn.addEventListener('click', function(){
+            var txtarea = firstbox.value;
+            var txtfind = secondbox.value;
+            var txtsearch = thirdbox.value;
+
+            newtext = txtarea.replace(txtfind, txtsearch);
+            firstbox.value = newtext;
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript|Arrays</title>
+</head>
+<body>
+    <h2>Javascript|Arrays</h2>
+    <p>JavaScript arrays are used to store multiple values in a single variable.</p>
+    <li>Object: this has Keys and values</li>
+
+    <p id="any"></p>
+
+    <p id="loop"></p>
+
+    <p id="each"></p>
+
+    <h3 id="Arr"></h3>
+
+    <script>
+        // normal assigning []
+        var car = ["benz", "lexus", "opel", "zenza"]
+
+        console.log(car)
+        // in arrays the first index is 0 zero
+
+        //Object assigning by using the key word called "new" and Array()
+        let cars = new Array("benz", "lexus", "opel", "zenza")
+        console.log(cars)
+        console.log(typeof(cars))
+
+        // viewing each
+        let a = car["opel"]
+        console.log(a) // undefined
+
+        let b = car[2]
+        console.log(b)
+
+        // changing the object
+        car[2] = "keke"
+        console.log(car)
+
+        // Arrays with strings and numbers
+        var users = ["John", "example@gamil.com", 123456];
+        console.log(users)
+        console.log(users[2])
+
+        // Object values
+        let user = {UserName: "cakahal", email: "example@gamil.com", password: 123456}
+        console.log(user)
+        console.log(typeof(user))
+
+        // getting the length
+        let c = car.length;
+        console.log(c)
+
+        // Assigning to last Arrays
+        var last = car[car.length -1]
+        console.log(last)
+
+
+        // Looping Arrays to display content
+        var students, text, flen, i 
+        students = ["john", "Doe", " Ben", " Cakahal", " Obi", " peter"]
+        flen = students.length;
+
+        text = "<ul>";
+            for(i = 0; i < flen; i++){
+                text += "<li>" + students[i] + "</li>";
+            }
+        text += "</ul>";
+
+        document.getElementById('loop').innerHTML = text
+
+        document.getElementById('any').innerHTML = students
+
+        // here we use forEach to loop through a function
+        var student, txt;
+        student = ["john", "Doe", " Ben", " Cakahal", " Obi", " peter"]
+
+        txt = "<h1>"
+            student.forEach(myDp);
+        txt += "</h1>"
+        document.getElementById('each').innerHTML = txt;
+
+        function myDp(value){
+            txt += "<li>" + value + "</li>"
+        }
+
+        student.push("Johnson")
+        console.log(student)
+
+        /* Associative Arrays */
+        /*
+            This means where an array is supported with named indexes
+            Arrays with this named indexes are called associative arrays(or hashes)
+            Js does not support arrays with named indexes while others programming language does
+            In Javascript arrays always use numbered indexes
+        */
+
+        var myStudent = []
+        myStudent[0] = "Obi"
+        myStudent[1] = "ObiAda"
+        myStudent[2] = "Obident"
+        myStudent[3] = "ObiPO"
+        myStudent[4] = 99
+        
+        console.log(myStudent)
+        let L = myStudent.length;
+        console.log(L)
+
+        var one = myStudent[1]
+        console.log(one)
+
+        /*if we use named indexes, Js will redefine the array to standard 
+        object. after that some arrays methods and properties will produce incorrect results
+
+        DIFFERENCE B/W ARRAYS AND OBJECTS
+        arrays uses numbered index while object use number named indexes
+
+        where we can use Arrays and Objects
+            Js does not support associative arrays
+            we can use objects when you want the elements names to be Strings(text)
+            You should use arrays when you want the element names to be numbers
+        */
+
+        var stud = new Array(400, 500, 200, 700); // this creates an array with d/f elements(singlarly)
+        console.log(typeof(stud))
+
+        let Stud = [400, 500, 200, 700]
+        console.log(typeof(Stud))
+
+        // how to know if a var is an array
+        a = typeof(Stud)
+        console.log(a)
+
+        b = Array.isArray(stud)
+        console.log(b)
+
+        // lets see what happens when accessing an Object
+        var db = []
+        db['firstName'] = "johnson Cakahal"
+        db['lastName'] = "Obident"
+        db['age'] = 46
+
+        var A = db.length;
+        console.log(A)
+        var B = db[0];
+        console.log(B)
+        console.log(db['firstName'])
+
+        // Arrays are a special kind of Object with number indexes
+
+        // Using an Array in a function
+        document.getElementById('Arr').innerHTML = isArray(myStudent);
+
+        function isArray(myArr) {
+            return myArr.constructor.toString().indexOf("Array") > -1;
+        }
+
+        // instanceof: this operator returns true if an object is created by a given constructor
+
+        C = myStudent instanceof Array;
+        console.log(C)
+
+       
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | JavaScript</title>
+</head>
+<script defer>
+    function jsClass(){
+        document.getElementsByid('jc').innerHTML = 'here is your function code';
+
+    }
+</script>
+<body>
+    <h2>Welcome | JavaScript</h2>
+
+    <p id="hi" >JavaScript is the world's most popular programming language.
+
+        JavaScript is the programming language of the Web and small games.
+    </p> <br> <br>
+
+<!-- here is where we called the function out -->
+    <!-- <p id="jc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui, dolore?</p>
+    <button type="button" onclick="jsClass()">
+            here is for the function
+    </button> -->
+
+    <button type="button" onclick="document.getElementById('hi').innerText = 'testing our JavaScript' ">
+        welcome to java class
+    </button>
+
+    <button type="button" onclick="document.getElementById('tm').innerHTML = Date() ">
+        show time now....
+    </button>
+
+    <p id="tm"></p>
+
+    <p id="Hi" style="display: none;" >JavaScript is the world's most popular programming language.
+
+        JavaScript is the programming language of the Web.
+    </p>
+
+    <button type="button" onclick="document.getElementById('Hi').style.display='block' ">
+        click to subscribe
+    </button>
+
+    <h2>how to link the JavaScript:</h2>
+    <li>both internal n external are done inside the body tag: with the script tag , where we can also use the keyword defer as an attribute to alter the change</li>
+
+    <h2>Ways to Display JavaScript </h2>
+    <li>Writing into an HTML element, using innerHTML</li>
+    <li>Writing into an HTML output, using document.write()</li>
+    <li>Writing into an Alert box, using window.alert()</li>
+    <li>Writing into the browser console for debugging, using console.log()</li>
+
+    <p>Using innerHTML</p>
+    <p>To access an HTML element uses the document.getElementById(id) method. 
+        ---the id attribute defines the HTML element
+        ---the innerHTML property defines the HTML content:
+    </p>
+
+    <button type="button" onclick="document.write(5 * 6)"> here we did 5 x 6, click to show answer </button>
+<!-- here using alert on window -->
+    <script>
+        window.alert(6 * 9);
+    </script>
+
+    NB: window keyword can be skipped
+
+    <!-- here using alert on console -->
+    <script>
+        console.log(5 + 6);
+        console.log("=====================")
+        console.log(12 % 2)
+        console.log("+++++++++++++")
+        console.log(12 % 3)
+        console.log(12 % 10)
+        console.log(89 % 7)
+    </script>
+
+    <p>JavaScript Print()</p>
+    <p>JavaScript does not have any print object or print methods, you can only use this window.print() method in the browser to print the content of the current window </p>
+
+    <button onclick="window.print()">Print this page</button>
+
+    <script src="/js/intro.js"></script>
+    
+</body>
+</html>
